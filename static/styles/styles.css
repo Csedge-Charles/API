@@ -1,0 +1,11 @@
+#animal{
+    transform: translate(500px, 0px);
+}
+
+#image{
+    transform: translate(400px, 0px);
+    border-radius: 5px;
+    border: aquamarine, solid;
+    margin: 20px;
+    margin: 20px;
+}
