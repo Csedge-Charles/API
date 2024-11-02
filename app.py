@@ -46,17 +46,17 @@ my_api = [{'anml' : 'jellyfish', 'img': "data:image/jpeg;base64,/9j/4AAQSkZJRgAB
 @app.route('/api')
 def api():
     return random.choice(my_api)
-@app.route('/<num>')
-def greater_or_less_10(num):
-    num = float(num)
-    if num == int(num):
-        num = int(num)
-    if num > 10:
-        return f'{num} is greater than 10'
-    elif num == 10:
-        return f'{num} is equal to 10'
-    else: 
-        return f'{num} is less than 10'
+# @app.route('/<num>')
+# def greater_or_less_10(num):
+#     num = float(num)
+#     if num == int(num):
+#         num = int(num)
+#     if num > 10:
+#         return f'{num} is greater than 10'
+#     elif num == 10:
+#         return f'{num} is equal to 10'
+#     else: 
+#         return f'{num} is less than 10'
 
 @app.route('/display/<animal>')
 def display(animal):
@@ -67,7 +67,7 @@ def display(animal):
     else:
         return 'Animal not Found'
 
-@app.route('/display-three-random')
+@app.route('/three-random')
 def three():
     num_1 = random.randint(0, 13)
     num_2 = random.randint(0, 13)
@@ -76,6 +76,7 @@ def three():
         num_1 = random.randint(0, 13)
         num_2 = random.randint(0, 13)
         num_3 = random.randint(0, 13)
+    print([num_1, num_2, num_3])
     return render_template('three.html', S1=my_api[num_1]['img'], S2=my_api[num_2]['img'], S3=my_api[num_3]['img'])
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=4999)
